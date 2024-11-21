@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     bool isAPressed;
     bool isSPressed;
     bool isDPressed;
-    public int moveSpeed;
+    public float moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Speed "))
         {
-            moveSpeed = moveSpeed * 2;
+            moveSpeed = moveSpeed * 1.3f;
+        }
+        if (collision.gameObject.CompareTag("slow"))
+        {
+            moveSpeed = moveSpeed * 0.7f;
         }
     }
 }
